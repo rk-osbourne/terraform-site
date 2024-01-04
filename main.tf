@@ -18,10 +18,6 @@ module "cloudfront_acm" {
   source       = "./terraform-modules/cloudfront_acm"
   region       = "us-east-1" 
   domain_name  = "fillerdomain.com"  # Set your domain name
-  tags = {
-    Environment = "Production",
-    Project     = "MyWebsite",
-  }
 }
 
 
