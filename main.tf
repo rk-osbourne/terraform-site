@@ -17,8 +17,12 @@ module "s3_website" "sanswww"{
 module "cloudfront_acm" {
   source       = "./terraform-modules/cloudfront_acm"
   region       = "us-east-1" 
-  domain_name  = "fillerdomain.com"  # Set your domain name
+  domain_name  = "fillerdomain.com" 
 }
 
-
+module "dynamodb_table" {
+  source       = "./terraform-modules/dynamodb"
+  region       = "us-east-1"  # Set the same AWS region as in the provider block
+  table_name   = "filer-dynamodb-table-name"  
+}
 
